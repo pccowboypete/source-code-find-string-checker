@@ -1,0 +1,36 @@
+{
+    "name": "Source Code Find String Checker",
+    "version": "1.1.0",
+    "description": "Find string in the source code of the page.",
+    "permissions": [
+          "scripting",
+          "activeTab",
+          "storage",
+          "tabs"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "/src/background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["/src/script.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [],
+        "matches": ["<all_urls>"]
+      }
+    ],
+    "action": {
+      "default_title": "Source Code Find String Checker",
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "16": "/src/assets/icon16.png",
+      "48": "/src/assets/icon48.png",
+      "128": "/src/assets/icon128.png"
+    },
+    "manifest_version": 3
+}
